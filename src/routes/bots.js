@@ -1,0 +1,1 @@
+import {Router} from "express";import {BotController} from "../controllers/bots.js";export const router = Router();router.get("/getAll", BotController.getBots);router.post("/create", BotController.createBot);
