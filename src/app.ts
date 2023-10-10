@@ -1,5 +1,4 @@
 import * as express from 'express';
-import mongoose from 'mongoose';
 import { router } from 'routes';
 import * as bodyParser from 'body-parser';
 import { initProvider } from 'providers/InitProvider';
@@ -9,8 +8,6 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-mongoose.connect('mongodb://localhost:27017/botland');
 
 app.use('/', router);
 

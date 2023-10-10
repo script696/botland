@@ -7,7 +7,11 @@ export class ServerHttpClientProvider {
       const res = await fetch('http://localhost:5000/api/bot/get-all');
       const data: Array<Bot> = await res.json();
 
-      const mappedData = data.map(({ name, token }) => ({ name, token }));
+      const mappedData = data.map(({ name, token, appUrl }) => ({
+        name,
+        token,
+        appUrl,
+      }));
 
       return mappedData;
     } catch (err) {

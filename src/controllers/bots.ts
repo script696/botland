@@ -1,24 +1,13 @@
-import BotModel from '../models/bots';
-// import {updateBots} from "../app";
+import { Bot } from 'shared/types/bot.typedef';
+import { botProvider } from 'providers/BotProvider';
+import { Request } from 'express';
 
 export class BotController {
-  static createBot = async (req, res) => {
-    console.log(req.body, 'req.body');
-    try {
-      const bot = await BotModel.create(req.body);
-      // updateBots([bot])
-      res.send({ data: bot });
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  static addBot = async (req: Request<Bot>, res) => {
+    botProvider.startBot(req.body);
 
-  static getBots = async (_, res) => {
-    try {
-      const bots = await BotModel.find();
-      res.send({ data: bots });
-    } catch (err) {
-      console.log(err);
-    }
+    res.send({
+      message: 'success',
+    });
   };
 }
