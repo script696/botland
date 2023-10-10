@@ -1,1 +1,0 @@
-import {Router} from "express";import {router as botRouter } from '../routes/bots.js'export const router = Router();router.use("/bots", botRouter);

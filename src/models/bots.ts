@@ -1,4 +1,8 @@
-import mongoose from "mongoose";
+import mongoose, {Document} from "mongoose";
+
+
+export type Bot = {name : string, token : string}
+export type BotDocument = Bot & Document;
 
 const botSchema = new mongoose.Schema({
   name: {

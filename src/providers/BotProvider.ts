@@ -1,1 +1,1 @@
-export class BotProvider {}
+import BotModel, {Bot} from "../models/bots";import {Model} from "mongoose";export class BotProvider {    botModel : Model<Bot>constructor() {    this.botModel = BotModel}    async getBots  () {        const bots = await this.botModel.find()        return bots}}
