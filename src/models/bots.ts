@@ -1,7 +1,6 @@
-import mongoose, {Document} from "mongoose";
+import mongoose, { Document } from 'mongoose';
 
-
-export type Bot = {name : string, token : string}
+export type Bot = { name: string; token: string };
 export type BotDocument = Bot & Document;
 
 const botSchema = new mongoose.Schema({
@@ -17,6 +16,6 @@ const botSchema = new mongoose.Schema({
   },
 });
 
-const botModel = mongoose.model("bot", botSchema);
+const botModel = mongoose.model('bot', botSchema);
 
-export default  botModel
+export default botModel;
